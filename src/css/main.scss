@@ -7,7 +7,141 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+body {
+  background-color: #6C8DA2;
+}
+
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+}
+
+.new-arrivals {
+  @include mq($from: leftCol){
+    min-height: 330px;
+    padding-bottom: 30px;
+  }
+
+  &.left {
+    .content__main-column{
+      @include mq($from: desktop){
+        margin-left: 31rem;
+        margin-right: 0rem;
+      }
+
+      @include mq($from: leftCol) {
+        margin-left: 43rem;
+      }
+    }
+  }
+
+
+  &.right {
+    .content__main-column{
+      @include mq($from: desktop){
+        margin-left: 0rem;
+        margin-right: 31rem;
+      }
+    }
+  }
+
+  &--logo {
+    width: 120px;
+    margin-left: 10px;
+    padding-top: 10px;
+
+    @include mq($from: desktop) {
+      position: absolute;
+      left: -230px;
+      width: 152px;
+    }
+
+    svg{
+      width: 100%;
+    }
+  }
+  &--headline {
+    padding:0px 8px 16px 8px;
+
+    @include mq($from: desktop){
+        margin-bottom: 120px;
+        padding-top: 6px;
+    }
+    h1{
+      font-size: 38px;
+      line-height: 40px;
+      font-family: $f-serif-headline;
+      font-weight: 200;
+
+      @include mq($from: desktop) {
+        font-size: 52px;
+        line-height: 52px;
+      }
+
+      span{
+        display: block;
+
+        &.yellow {
+          color: #FBB90F;
+        }
+
+        &.white {
+          color: white;
+          @include mq($from: desktop) {
+            position: absolute;
+            white-space: nowrap;
+            left: 266px;
+          }
+        }
+      }
+    }
+  }
+  &--image{
+    position: relative;
+    @include mq($from: desktop){
+      width: 100%;
+    }
+    img {
+      width: 100%;
+
+      @include mq($from: desktop) {
+        width: 50%;
+        position: absolute;
+      }
+    }
+
+    .right & {
+      img {
+        @include mq($from: desktop) {
+          right: 0px;
+        }
+      }
+    }
+
+    .left & {
+      img {
+        @include mq($from: desktop) {
+          left: 0px;
+        }
+      }
+    }
+  }
+  &--text{
+    padding-top: 8px;
+    @include mq($from: desktop){
+      border-top: 1px solid white;
+    }
+    h1,h2,p{
+      color: white;
+    }
+    h1, h2{
+      font-family: $f-serif-headline;
+      font-size: 32px;
+      line-height: 34px;
+    }
+    h2{
+      font-weight: 200;
+      margin-bottom: 16px;
+    }
+  }
 }
