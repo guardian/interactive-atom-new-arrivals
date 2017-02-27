@@ -32,6 +32,17 @@ body {
       @include mq($from: leftCol) {
         margin-left: 43rem;
       }
+
+      .new-arrivals--text {
+        padding: 8px;
+
+        @include mq($from: desktop){
+          padding-right: 8px;
+          padding-top: 6px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+        }
+      }
     }
   }
 
@@ -41,6 +52,15 @@ body {
       @include mq($from: desktop){
         margin-left: 0rem;
         margin-right: 31rem;
+      }
+
+      .new-arrivals--text {
+        @include mq($from: desktop){
+          padding-left: 8px;
+          padding-right: 0px;
+          padding-top: 6px;
+          padding-bottom: 0px;
+        }
       }
     }
   }
@@ -142,6 +162,12 @@ body {
     h2{
       font-weight: 200;
       margin-bottom: 16px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      font-family: $f-serif-text;
+      color: white;
     }
   }
 }
